@@ -5,11 +5,10 @@ services:
       context: ./eureka-server
     container_name: eureka-server
     ports:
-      - "8761:8761"
+      - "127.0.0.1:8761:8761"
     networks:
       - backend-network
 
-
 networks:
   backend-network:
-    driver: bridge
+    external: true
